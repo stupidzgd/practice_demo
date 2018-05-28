@@ -15,6 +15,9 @@
 }
 
 .wrapper .sliderList {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 3120px;
     height: 100%;
 }
@@ -34,6 +37,7 @@
 
 .wrapper .btnList {
     position: absolute;
+    display: none;
     top: 50%;
     margin-top: -15px;
     width: 100%;
