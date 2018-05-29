@@ -15,13 +15,13 @@
 }
 
 .wrapper .main ul {
-    margin: 30px;
+    /* margin: 30px; */
 
 }
 
 .wrapper .main ul li {
     float: left;
-    margin: 20px 10px;
+    margin: 10px 10px;
     width: 180px;
     height: 360px;
     font-size: 12px;
@@ -29,7 +29,7 @@
 
 .wrapper .main ul li:hover {
     border: 1px solid #f40;
-    margin: 19px 9px;
+    margin: 9px 9px;
 }
 
 .wrapper .main ul li img {
@@ -58,18 +58,141 @@
     padding: 0 1px;
     background-color: #f40;
     color: #fff;
-    height: 14px;
-    line-height: 14px;
+    height: 16px;
+    line-height: 16px;
+    
 }
 .wrapper .main ul li .buy-msg .pay-num {
     float: right;
     color: #888;
 }
 
-.wrapper .main ul li .item-name {
+.wrapper .main ul li .item-shop {
+    padding: 5px 10px;
+}
+
+.wrapper .main ul li .item-shop .shop-name {
+    float: right;
+}
+
+.wrapper .main ul li .item-shop .shop-name a{
+    color: #888;
+    text-decoration: underline;
+}
+
+.wrapper .main ul .item .btnList {
     padding: 10px;
 }
 
-.wrapper .main ul li .shop-name {
-    
+.wrapper .main ul .item .btnList::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.wrapper .main ul .item .btnList button {
+    width: 72px;
+    height: 30px;
+    border: none;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.wrapper .main ul .item .btnList .add-cart {
+    float: left;
+    background-color: #f40;
+}
+
+.wrapper .main ul .item .btnList .add-like {
+    float: right;
+    background-color: #ff0036;
+}
+
+.wrapper .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 315px;
+    height: 100%;
+}
+
+.wrapper .sidebar .user-message{
+    float: left;
+    width: 35px;
+    height: 100%;
+    background: #000;
+}
+
+.wrapper .sidebar .shopping-cart{
+    float: right;
+    width: 280px;
+    height: 100%;
+    background-color: #e6e6e6
+}
+
+.wrapper .sidebar .shopping-cart .item-message {
+    width: 100%;
+    text-align: center;
+}
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 8px;
+    background-color: #fff;
+}
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper item1 {
+    width: 90%;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper item2 {
+    width: 90%;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper  .dianpu,
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper  .item-price {
+    font-size: 12px;
+    height: 29px;
+    line-height: 29px;
+}
+
+
+
+.wrapper .sidebar .shopping-cart .msg-bottom {
+    position: absolute;
+    left: 35px;
+    bottom: 10px;
+    box-sizing: border-box;
+    width: 280px;
+    text-align: center;
+}
+
+.wrapper .sidebar .shopping-cart .msg-bottom p {
+    display: inline-block;
+    width: 90%;
+}
+
+.wrapper .sidebar .shopping-cart .msg-bottom p::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.wrapper .sidebar .shopping-cart .msg-bottom .number{
+    float: left;
+    font-size: 14px;
+}
+
+.wrapper .sidebar .shopping-cart .msg-bottom .sum-price{
+    float: right;
+    font-size: 14px;
+    color: #ff0036;
+}
+
+.wrapper .sidebar .shopping-cart .msg-bottom button {
+    width: 90%;
+    height: 40px;
+    border:none;
+    background-color: #ff0036;
+    color: #fff;
 }
