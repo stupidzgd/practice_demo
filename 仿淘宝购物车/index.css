@@ -5,6 +5,14 @@
     text-decoration: none;
 }
 
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/*左侧商品区域 */
 .wrapper {
     width: 100%;
 }
@@ -84,11 +92,11 @@
     padding: 10px;
 }
 
-.wrapper .main ul .item .btnList::after {
+/* .wrapper .main ul .item .btnList::after {
     content: "";
     display: block;
     clear: both;
-}
+} */
 
 .wrapper .main ul .item .btnList button {
     width: 72px;
@@ -96,6 +104,7 @@
     border: none;
     font-weight: bolder;
     color: #fff;
+    cursor: pointer;
 }
 
 .wrapper .main ul .item .btnList .add-cart {
@@ -108,6 +117,8 @@
     background-color: #ff0036;
 }
 
+
+/* 右侧边栏区域 */
 .wrapper .sidebar {
     position: fixed;
     top: 0;
@@ -123,6 +134,74 @@
     background: #000;
 }
 
+.wrapper .sidebar .user-message .content {
+    margin-top: 150px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.wrapper .sidebar .user-message .content .first img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.wrapper .sidebar .user-message .content .second i {
+    display: inline-block;
+    margin-top: 17px;
+    width: 35px;
+    height: 26px;
+    background: url("./img/cart.jpg") no-repeat 4px 0px;
+} 
+
+.wrapper .sidebar .user-message .content .second .con {
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 25px;
+    padding: 0 7px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.wrapper .sidebar .user-message .content .second .item-num {
+    display: block;
+    margin: 8px auto;
+    font-size: 12px;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    background-color: #ff0036;
+    text-align: center;
+}
+
+.wrapper .sidebar .user-message .content .third i{
+    display: inline-block;
+    margin-top: 17px;
+    width: 35px;
+    height: 26px;
+    background: url("./img/star.jpg") no-repeat 2px 0px;
+}
+
+.wrapper .sidebar .user-message .content .third .like-num {
+    display: block;
+    margin: 5px auto;
+    font-size: 12px;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    background-color: #f40;
+    text-align: center;
+}
+
+
+.wrapper .sidebar .user-message .content .third i {
+    
+}
+
+/* 购物车区域 */
 .wrapper .sidebar .shopping-cart{
     float: right;
     width: 280px;
@@ -132,32 +211,117 @@
 
 .wrapper .sidebar .shopping-cart .item-message {
     width: 100%;
-    text-align: center;
 }
 .wrapper .sidebar .shopping-cart .item-message  .item-wrapper {
-    display: inline-block;
+    position: relative;
     width: 100%;
-    margin-bottom: 8px;
+    margin: 12px 0;
     background-color: #fff;
+    font-size: 0px;
 }
-.wrapper .sidebar .shopping-cart .item-message  .item-wrapper item1 {
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item1 {
     width: 90%;
+    margin-left: 14px;
     border-bottom: 1px solid #e6e6e6;
+    font-size: 12px;
 }
 
-.wrapper .sidebar .shopping-cart .item-message  .item-wrapper item2 {
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 {
+    margin-left: 14px;
     width: 90%;
+    height: 64px;
 }
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 img {
+    margin-top: 8px;
+    width: 55px;
+    height: 50px;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 .item-name {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 8px 5px 0;
+    padding: 10px 0;
+    width: 55px;
+    height: 50px;
+    color: #888;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 .btn-wrap {
+    display: inline-block;
+    margin-top: 8px;
+    width: 132px;
+    color: #888;
+    height: 50px;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 .btn-wrap .reduce,
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 .btn-wrap .add{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    background-color: #f3f3f3;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 1px solid #c4c4c4;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 .btn-wrap .count {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 .item-price {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper .item2 .del {
+    position: absolute;
+    top: 35px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    background-color: #c0c0c0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 1px solid #c4c4c4;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+}
+
 
 .wrapper .sidebar .shopping-cart .item-message  .item-wrapper  .dianpu,
 .wrapper .sidebar .shopping-cart .item-message  .item-wrapper  .item-price {
-    font-size: 12px;
     height: 29px;
     line-height: 29px;
 }
 
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper  .dianpu {
+    float: left;
+}
+
+.wrapper .sidebar .shopping-cart .item-message  .item-wrapper  .item-price {
+    float: right;
+}
 
 
+/* 购物车底部结算 */
 .wrapper .sidebar .shopping-cart .msg-bottom {
     position: absolute;
     left: 35px;
@@ -172,11 +336,11 @@
     width: 90%;
 }
 
-.wrapper .sidebar .shopping-cart .msg-bottom p::after {
+/* .wrapper .sidebar .shopping-cart .msg-bottom p::after {
     content: "";
     display: block;
     clear: both;
-}
+} */
 
 .wrapper .sidebar .shopping-cart .msg-bottom .number{
     float: left;
