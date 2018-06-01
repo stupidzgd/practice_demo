@@ -29,15 +29,15 @@
 
 .wrapper .main ul li {
     float: left;
-    margin: 10px 10px;
+    margin: 9px 9px;
     width: 180px;
     height: 360px;
     font-size: 12px;
+    border: 1px solid transparent;
 }
 
 .wrapper .main ul li:hover {
     border: 1px solid #f40;
-    margin: 9px 9px;
 }
 
 .wrapper .main ul li img {
@@ -196,10 +196,6 @@
     text-align: center;
 }
 
-
-.wrapper .sidebar .user-message .content .third i {
-    
-}
 
 /* 购物车区域 */
 .wrapper .sidebar .shopping-cart{
