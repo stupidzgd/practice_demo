@@ -1,0 +1,297 @@
+.main-wrapper {
+    width: 100%;
+}
+
+.main-wrapper .main-content{
+    position: relative;
+    margin: 0 auto;
+    width: 1040px;
+}
+
+.main-wrapper .main-content h1 {
+    padding-bottom: 15px;
+    font-size: 26px;
+    color: #494949;
+}
+
+.main-wrapper .main-content .music-msg-wrap {
+    float: left;
+    margin-bottom: 15px;
+    width: 500px;
+}
+
+/* 歌曲图片信息框 */
+.main-wrapper .main-content .music-msg-wrap .img-wrap {
+    display: inline-block;
+    margin: 3px 13px 0 0;
+    width: 135px;
+}
+
+.main-wrapper .main-content .music-msg-wrap img {
+    width: 100%;
+}
+
+.main-wrapper .main-content .music-msg-wrap button {
+    display: block;
+    margin-top: 10px;
+    padding: 4px 0;
+    width: 100%;
+    line-height: 1.62;
+    font-size: 13px;
+    border:none;
+    text-align: center;
+    background-color: #66BA9C;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.main-wrapper .main-content .music-msg-wrap button i {
+    display: inline-block;
+    width: 17px;
+    height: 18px;
+    background: url('../images/start-fm-logo.png') no-repeat -2px 2px;
+    vertical-align: top;
+}
+
+.main-wrapper .main-content .music-msg-wrap .music-msg {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    
+}
+
+.main-wrapper .main-content .music-msg-wrap .music-msg p {
+    line-height: 1.65;
+}
+
+.main-wrapper .main-content .music-msg-wrap .music-msg p .title {
+    color: #666666;
+}
+
+.main-wrapper .main-content .music-msg-wrap .music-msg p .message {
+
+}
+
+.main-wrapper .main-content .music-msg-wrap .music-msg p .author {
+    color: #37a;
+    cursor: pointer;
+}
+
+/* 评分区 */
+.main-wrapper .main-content .content .music-score-wrap {
+    float: left;
+    margin: 2px 0 0 0 0;
+    padding: 0 0 0 15px;
+    width: 155px;
+    height: 157px;
+    color: #9b9b9b;
+    font-size: 13px;
+}
+
+.main-wrapper .main-content .content .music-score-wrap .rating .rating-score {
+    float: left;
+    min-width: 30%;
+    line-height: 2;
+    font-size: 28px;
+    color: #494949;
+    
+}
+
+.main-wrapper .main-content .content .music-score-wrap .rating .rating-right {
+    /* background: #9b9b9b; */
+    display: inline-block;
+    width: 75px;
+    padding: 10px 0 10px 6px;
+    word-break: break-all;
+    
+}
+
+.main-wrapper .main-content .content .music-score-wrap .rating .rating-right .rating-star {
+    display: inline-block;
+    margin: 1px 0 0 0;
+    width: 75px;
+    height: 15px;
+    background: url('../images/rating.png') no-repeat 0px -45px;
+    overflow: hidden;
+}
+
+.main-wrapper .main-content .content .music-score-wrap .rating .rating-right .comment-num {
+    width: 75px;
+    line-height: 2;
+    font-size: 12px;
+    color: #37a;
+}
+
+.main-wrapper .main-content .content .music-score-wrap .percentage div{
+    overflow: hidden;
+}
+
+.main-wrapper .main-content .content .music-score-wrap .percentage span {
+    float: left;
+    font-size: 12px;
+}
+
+.main-wrapper .main-content .content .music-score-wrap .percentage .power {
+    float: left;
+    margin: 1px 4px;
+    height: 10px;
+    background: #ffd596 none repeat scroll 0 0;
+}
+
+/* 广告区 */
+
+.ad-wrap {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    width: 300px;
+    height: 250px;
+
+}
+
+.ad-wrap a img {
+    width: 300px;
+    height: 250px;
+}
+
+/* 想听 在听 打分一系列按钮 第一行 */
+.main-wrapper .main-content .review-btn {
+    width: 675px;
+    height: 24px;
+    padding: 20px 0 3px;
+}
+
+.main-wrapper .main-content .review-btn a {
+    display: block;
+    float: left;
+    width: 42px;
+    height: 24px;
+    padding-right: 7px;
+    margin-right: 10px;
+    color: #000;
+    font: normal 12px sans-serif;
+    letter-spacing: 3px;
+    background: transparent url('../images/btn-back.png') no-repeat scroll right top !important;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.main-wrapper .main-content .review-btn a  span {
+    background: transparent url('../images/btn-back.png') no-repeat;
+    display: block;
+    padding: 1px 1px 3px 11px;
+    line-height: 22px;
+}
+
+.main-wrapper .main-content .review-btn .choose-star {
+    float: left;
+    font-size: 13px;
+    color: #111;
+    line-height: 1.62;
+}
+
+.main-wrapper .main-content .review-btn .choose-star ul {
+    display: inline-block;
+}
+
+.main-wrapper .main-content .review-btn .choose-star li {
+    float: left;
+    width: 16px;
+    height: 16px;
+    line-height: 1.62;
+    cursor: pointer;
+    vertical-align: text-bottom;
+}
+
+.main-wrapper .main-content .review-btn .choose-star li img {
+    width: 100%;
+    height: 100%;
+    line-height: 1.62;
+    vertical-align: text-bottom;
+}
+
+.main-wrapper .main-content .review-btn .level {
+    float: left;
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.62;
+}
+
+
+/* 写短评 一系列按钮 第二行 */
+.main-wrapper .main-content .perform-btn {
+    width: 675px;
+    font-size: 13px;
+    line-height: 1.62;
+}
+
+.main-wrapper .main-content .perform-btn .left-btn-list {
+    float: left;
+    height: 100%;
+}
+
+.main-wrapper .main-content .perform-btn .left-btn-list li {
+    float: left;
+    margin-left: 15px;
+    padding-top: 6px;
+    color: #37a;
+    cursor: pointer;
+}
+
+.main-wrapper .main-content .perform-btn .left-btn-list li:nth-of-type(1) {
+    margin-left: 0px;
+}
+
+.main-wrapper .main-content .perform-btn .left-btn-list li:nth-of-type(1) i{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url('../images/short-comment.gif') no-repeat 0px 0px;
+}
+
+.main-wrapper .main-content .perform-btn .left-btn-list li:nth-of-type(2) i{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url('../images/pen.gif') no-repeat 0px 0px;
+}
+
+.main-wrapper .main-content .perform-btn .left-btn-list li:nth-of-type(3) i{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url('../images/add.gif') no-repeat 0px 0px;
+}
+
+.main-wrapper .main-content .perform-btn .left-btn-list li:nth-of-type(4) i{
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: url('../images/arrow.png') no-repeat 0px -20px;
+}
+
+.main-wrapper .main-content .perform-btn .left-btn-list li span:hover {
+    color: #fff;
+    background-color: #37a;
+}
+
+.main-wrapper .main-content .perform-btn .recommend {
+    float: right;
+    margin-top: 5px;
+    padding: 0 8px;
+    color: #4f946e;
+    border: 1px solid transparent;
+}
+
+.main-wrapper .main-content .perform-btn .recommend:hover {
+    border: 1px solid #c4e2d8;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+

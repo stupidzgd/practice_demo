@@ -1,0 +1,12 @@
+// {"rating":{"max":10,"average":"7.4","numRaters":5975,"min":0},"author":[{"name":"赵雷"}],
+// "alt_title":"","image":"https://img3.doubanio.com\/view\/subject\/s\/public\/s29114672.jpg",
+// "title":"成都","mobile_link":"https:\/\/m.douban.com\/music\/subject\/26899717\/",
+// "summary":"赵雷 \/ 单曲 \/ 2016-10-24 \/ StreetVoice \/ 数字(Digital)",
+// "attrs":{"publisher":["StreetVoice"],"singer":["赵雷"],
+// "radio_url":"https:\/\/douban.fm\/?context=channel:0|subject_id:26899717",
+// "pubdate":["2016-10-24"],"title":["成都"],"media":["数字(Digital)"],"tracks":["成都"],
+// "version":["单曲"],"songs":[{"index":1,"name":"track","title":"成都 "}]},
+// "alt":"https:\/\/music.douban.com\/subject\/26899717\/","id":"26899717",
+// "tags":[{"count":1731,"name":"民谣"},{"count":1423,"name":"赵雷"},{"count":878,"name":"成都"},
+// {"count":344,"name":"单曲"},{"count":334,"name":"2016"},{"count":328,"name":"内地"},
+// {"count":304,"name":"男声"},{"count":303,"name":"中国"}]}
