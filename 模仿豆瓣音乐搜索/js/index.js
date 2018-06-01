@@ -1,33 +1,3 @@
-function debounce(handler, delay, immediate) {
-    var timer = null;
-    var result;
-
-    function debounced() {
-        var _this = this;
-        var args = arguments;
-        if (immediate) {
-            if (!timer) {
-                result = handler.apply(_this, args);
-            }
-            timer = setTimeout(function () {
-                timer = null;
-            }, delay)
-        } else {
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-                result = handler.apply(_this, args);
-            }, delay)
-        }
-        return result;
-    }
-
-    debounced.cancel = function () {
-        clearTimeout(timer);
-        timer = null;
-    }
-
-    return debounced;
-}
 
 (function ($) {
     // var data = {"count":1,"start":0,"total":1,
@@ -60,42 +30,44 @@ function debounce(handler, delay, immediate) {
     }
 
     function addDom(data) {
-        console.log(data);
         // data = JSON.parse(data);
         var title, imgUrl, desList, itemUrl, itemId;
         var str = '';
-        for (var i = 0; i < 5; i++) {
-            var des = '表演者 : ';
-            title = data.musics[i].title;
-            imgUrl = data.musics[i].image;
-            //豆瓣图片显示403，使用图片代理转换地址
-            imgUrl = imgAgent(imgUrl);
-            console.log(imgUrl)
-            desList = data.musics[i].attrs.singer;
-            // itemUrl = data.musics[i].mobile_link;
-            musicId = data.musics[i].id;
-            for (var j = 0; j < desList.length; j++) {
-                if (j != desList.length - 1) {
-                    des += desList[j] + ',';
-                } else {
-                    des += desList[j];
+        console.log(data, data.count)
+        if (data.count > 0) {
+            for (var i = 0; i < 5; i++) {
+                var des = '表演者 : ';
+                title = data.musics[i].title;
+                imgUrl = data.musics[i].image;
+                //豆瓣图片显示403，使用图片代理转换地址
+                imgUrl = imgAgent(imgUrl);
+                console.log(imgUrl)
+                desList = data.musics[i].attrs.singer;
+                // itemUrl = data.musics[i].mobile_link;
+                musicId = data.musics[i].id;
+                for (var j = 0; j < desList.length; j++) {
+                    if (j != desList.length - 1) {
+                        des += desList[j] + ',';
+                    } else {
+                        des += desList[j];
+                    }
                 }
+                str += '<li>\
+                        <a href="'+ 'http://localhost/ajax/douban/detailPage.html?id=' + musicId + '">\
+                            <img src="' + imgUrl + '" alt="">\
+                            <div class="msg-wrapper">\
+                                <span class="title">'+ title + '</span>\
+                                <span class="des">' + des + '</span>\
+                            </div>\
+                        </a>\
+                    </li>'
             }
-            str += '<li>\
-                    <a href="'+ 'http://localhost/ajax/douban/itemPage.html?id=' + musicId + '">\
-                        <img src="' + imgUrl + '" alt="">\
-                        <div class="msg-wrapper">\
-                            <span class="title">'+ title + '</span>\
-                            <span class="des">' + des + '</span>\
-                        </div>\
-                    </a>\
-                </li>'
+
+            // console.log(imgUrl, des);
+            // console.log(str);
+            searchList.html(str);
+            searchList.css('display', 'block');
         }
-    
-        // console.log(imgUrl, des);
-        // console.log(str);
-        searchList.html(str);
-        searchList.css('display', 'block');
     }
 
     // oInp.on('blur', function() {
@@ -109,10 +81,10 @@ function debounce(handler, delay, immediate) {
     //   }
 
     //mousedown事件替代blur事件，判断mousedown区域，如果不在搜索框和搜索列表区域，就把搜索列表设置为none
-    $(document).on('mousedown', function(e) {
+    $(document).on('mousedown', function (e) {
         var target = e.target;
         // console.log(e.target);
-        if(!$(target).closest('ul').hasClass('search-list') && !$(target).hasClass('search-inp')) {
+        if (!$(target).closest('ul').hasClass('search-list') && !$(target).hasClass('search-inp')) {
             searchList.css('display', 'none');
         }
     })
