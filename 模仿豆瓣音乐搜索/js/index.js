@@ -35,7 +35,7 @@
         var str = '';
         console.log(data, data.count)
         if (data.count > 0) {
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < data.count; i++) {
                 var des = '表演者 : ';
                 title = data.musics[i].title;
                 imgUrl = data.musics[i].image;
@@ -88,11 +88,5 @@
             searchList.css('display', 'none');
         }
     })
-
-    function imgAgent(url) {
-        var agentUrl = "http://images.weserv.nl/?url=";
-        url = url.split('://')[1];
-        return agentUrl + url;
-    }
 
 }($))

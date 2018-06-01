@@ -50,7 +50,7 @@
     display: inline-block;
     width: 17px;
     height: 18px;
-    background: url('../images/start-fm-logo.png') no-repeat -2px 2px;
+   background: url('../images/start-fm-logo.png') no-repeat -2px 2px; 
     vertical-align: top;
 }
 
@@ -157,6 +157,7 @@
 
 /* 想听 在听 打分一系列按钮 第一行 */
 .main-wrapper .main-content .review-btn {
+    margin-top: 16px;
     width: 675px;
     height: 24px;
     padding: 20px 0 3px;

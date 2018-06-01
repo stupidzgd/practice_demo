@@ -27,7 +27,15 @@
     var searchList = $('.search-list');
     var oInp = $('.search-inp');
     var id = location.search.split('id=')[1];
-
+    var mainTitle = $('.main-content h1');
+    var imgWrap = $('.img-wrap');
+    var musicMsg = $('.music-msg');
+    var musicScoreDom = $('.rating-score');
+    var commentCountDom = $('.comment-num');
+    var ratingStarDom = $('.rating-star');
+    var starList = $(".review-btn ul li");
+    var levelDom = $('.level');
+    
     oInp.on('input', debounce(getDate, 800, false));
     
     function getDate() {
@@ -50,8 +58,9 @@
         var str = '';
         console.log(data, data.count)
         if (data.count > 0) {
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < data.count; i++) {
                 var des = '表演者 : ';
+                // title = data.musics[i].attrs.title || data.musics[i].title;
                 title = data.musics[i].title;
                 imgUrl = data.musics[i].image;
                 //豆瓣图片显示403，使用图片代理转换地址
@@ -122,12 +131,159 @@
             dataType: 'jsonp',
             success: function (data) {
                 console.log(data);
+                //  var data = JSON.parse(data);
+                createMusicDom(data);
+                createScoreDom(data);
             }
         }) 
     }
 
-    function createMusicDom () {
+    function createMusicDom (data) {
+        try {
+            var title = data.title;
+            var performer = data.attrs.singer[0];
+            var musicStyle = data.tags[0].name;
+            var musicVerson = data.attrs.version[0];
+            var musicMedia = data.attrs.media[0];
+            var musicDate = data.attrs.pubdate[0];
+            var pubisher = data.attrs.publisher[0];
+        } catch (error) {
+            
+        }
 
+        var imgUrl = data.image;
+        imgUrl = parseUrl(imgUrl);
+        console.log(imgUrl);
+        imgUrl = imgAgent(imgUrl);
+        var imgStr = '\
+                <img src="' + imgUrl +'" alt="">\
+                <button class="similar">\
+                    <i></i>听相似的歌曲\
+                </button>\
+                '
+        
+        var musicMsgStr = '\
+            <p>\
+                <span class="title">表演者: </span>\
+                <a class="author">' + performer + '</a>\
+            </p>\
+            <p>\
+                <span class="title">流派: </span>\
+                <span class="message">' + musicStyle + '</span>\
+            </p>\
+            <p>\
+                <span class="title">专辑类型: </span>\
+                <span class="message">' + musicVerson + '</span>\
+            </p>\
+            <p>\
+                <span class="title">介质: </span>\
+                <span class="message">' + musicMedia + '(Digital)</span>\
+            </p>\
+            <p>\
+                <span class="title">发型时间: </span>\
+                <span class="message">' + musicDate +'</span>\
+            </p>\
+            <p>\
+                <span class="title">出版者: </span>\
+                <span class="message">' + pubisher + '</span>\
+            </p>\
+        '
+        mainTitle.html(title);
+        imgWrap.html(imgStr);
+        musicMsg.html(musicMsgStr);
+    }
+    
+    function createScoreDom(data) {
+        var musicScore = data.rating.average;
+        var commentCount = data.rating.numRaters;
+        
+        musicScoreDom.html(musicScore);
+        commentCountDom.html(commentCount + '人评价');
+        //ratingStarDom.css({});
+        performStarPic(musicScore);
+        
+        bindScoreEvent();
+
+    }
+
+    function parseUrl(str) {
+        var urlArr = str.split('\\');
+        var url = ''
+        urlArr.forEach(function(ele, index) {
+            url += ele;
+        })
+        return url;
+    }
+
+    function performStarPic(score) {
+        if(score >= 9.5) {
+            ratingStarDom.css({'background-position': '0px 0px'}); 
+        } else if (score >= 8.5 && score < 9.5) {
+            ratingStarDom.css({'background-position': '0px -15px'}); 
+        } else if (score >= 7.5 && score < 8.5) {
+            ratingStarDom.css({'background-position': '0px -30px'});  
+        } else if (score >= 6.5 && score < 7.5) {
+            ratingStarDom.css({'background-position': '0px -45px'}); 
+        } else if (score >= 5.5 && score < 6.5) {
+            ratingStarDom.css({'background-position': '0px -60px'}); 
+        } else if (score >= 4.5 && score < 5.5) {
+            ratingStarDom.css({'background-position': '0px -75px'}); 
+        } else if (score >= 3.5 && score < 4.5) {
+            ratingStarDom.css({'background-position': '0px -90px'}); 
+        } else if (score >= 2.5 && score < 3.5) {
+            ratingStarDom.css({'background-position': '0px -105px'}); 
+        } else if (score >= 1.5 && score < 2.5) {
+            ratingStarDom.css({'background-position': '0px -120px'}); 
+        } else if (score >= 0.5 && score < 1.5) {
+            ratingStarDom.css({'background-position': '0px -135px'}); 
+        } else {
+            ratingStarDom.css({'background-position': '0px -150px'}); 
+        }
+    }
+
+    function bindScoreEvent() {
+        $('.review-btn ul').on('mouseenter', 'li', function() {
+            var num = $(this).index();
+            var review = getReview (num);
+            for(var i = 0; i <= num; i++) {
+                starList.eq(i).find('img').attr('src', './images/star_onmouseover.png');
+            }
+            for(var j = num + 1; j < starList.length; j++) {
+                starList.eq(j).find('img').attr('src', './images/star_hollow_hover.png');
+            }
+            levelDom.html(review);
+        })
+
+        
+
+        $('.review-btn ul').on('mouseleave', function() {
+            console.log('leave');
+            for(var i = 0; i <= 4;i++) {
+                starList.eq(i).find('img').attr('src', './images/star_hollow_hover.png');
+            }
+            levelDom.html('');
+        })
+
+        // $('.starList').on('click', function() {
+        //     var num = $(this).index();
+        //     for(var i = 0; i <= num; i++) {
+        //         starList.eq(i).attr('src', './images/star_onmouseover.png');
+        //     }
+        // })
+
+    }
+    function getReview (num) {
+        if(num == 5) {
+            return '力荐';
+        } else if (num == 4) {
+            return '推荐';
+        } else if (num == 3) {
+            return '还行';
+        } else if (num == 2) {
+            return '较差';
+        } else {
+            return '很差';
+        }
     }
 
 }($))
