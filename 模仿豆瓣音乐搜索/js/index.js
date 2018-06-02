@@ -14,6 +14,15 @@
     var searchList = $('.search-list');
     var oInp = $('.search-inp');
     oInp.on('input', debounce(getDate, 800, false));
+    $(document).on('mousedown', hideList);
+    $('.search-wrapper form').on('submit', function(e) {
+        e.preventDefault();
+    })
+    $('.search-btn').on('submit', function(e) {
+        e.preventDefault();
+    })
+    $('.search-inp').on('keyup', bindEnter);
+    var returnedData;
 
     function getDate() {
         var value = this.value;
@@ -24,6 +33,7 @@
             dataType: 'jsonp',
             data: 'q=' + value + '&count=7',
             success: function (data) {
+                returnedData = data;
                 addDom(data);
             }
         })
@@ -81,12 +91,27 @@
     //   }
 
     //mousedown事件替代blur事件，判断mousedown区域，如果不在搜索框和搜索列表区域，就把搜索列表设置为none
-    $(document).on('mousedown', function (e) {
+
+    function hideList(e) {
         var target = e.target;
         // console.log(e.target);
         if (!$(target).closest('ul').hasClass('search-list') && !$(target).hasClass('search-inp')) {
             searchList.css('display', 'none');
+            $(document).off('mousedown', hideList)
         }
-    })
+    }
+
+    function bindEnter(e) {
+        console.log(1111);
+        if(e.keyCode == '13') {
+            id = returnedData.musics[0].id;
+            console.log(id);
+            if(id) {
+                window.location.href = './detailPage.html?id=' + id;
+            }     
+        }
+        
+    }
+
 
 }($))

@@ -37,6 +37,16 @@
     var levelDom = $('.level');
     
     oInp.on('input', debounce(getDate, 800, false));
+    //mousedown事件替代blur事件，判断mousedown区域，如果不在搜索框和搜索列表区域，就把搜索列表设置为none    
+    $(document).on('mousedown', hideList);
+    $('.search-wrapper form').on('submit', function(e) {
+        e.preventDefault();
+    })
+    $('.search-btn').on('submit', function(e) {
+        e.preventDefault();
+    })
+    $('.search-inp').on('keyup', bindEnter);
+    var returnedData;
     
     function getDate() {
         var value = this.value;
@@ -47,6 +57,7 @@
             dataType: 'jsonp',
             data: 'q=' + value + '&count=7',
             success: function (data) {
+                returnedData = data;
                 addDom(data);
             }
         })
@@ -103,15 +114,6 @@
     // if(target.parentNode!==oUl&&target!==oText){
     //     oUl.style.display='none';
     //   }
-
-    //mousedown事件替代blur事件，判断mousedown区域，如果不在搜索框和搜索列表区域，就把搜索列表设置为none
-    $(document).on('mousedown', function (e) {
-        var target = e.target;
-        // console.log(e.target);
-        if (!$(target).closest('ul').hasClass('search-list') && !$(target).hasClass('search-inp')) {
-            searchList.css('display', 'none');
-        }
-    })
 
     function imgAgent(url) {
         var agentUrl = "http://images.weserv.nl/?url=";
@@ -284,6 +286,26 @@
         } else {
             return '很差';
         }
+    }
+
+    // 下面是搜索栏用的两个事件
+    function hideList(e) {
+        var target = e.target;
+        // console.log(e.target);
+        if (!$(target).closest('ul').hasClass('search-list') && !$(target).hasClass('search-inp')) {
+            searchList.css('display', 'none');
+            $(document).off('mousedown', hideList)
+        }
+    }
+
+    function bindEnter(e) {
+        if(e.keyCode == '13') {
+            id = returnedData.musics[0].id
+            if(id) {
+                window.location.href = './detailPage.html?id=' + id;
+            }     
+        }
+        
     }
 
 }($))
