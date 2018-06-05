@@ -88,7 +88,7 @@
                     }
                 }
                 str += '<li>\
-                        <a href="'+ 'http://localhost/ajax/douban/detailPage.html?id=' + musicId + '">\
+                        <a href="'+ './detailPage.html?id=' + musicId + '">\
                             <img src="' + imgUrl + '" alt="">\
                             <div class="msg-wrapper">\
                                 <span class="title">'+ title + '</span>\

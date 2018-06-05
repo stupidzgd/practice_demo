@@ -63,7 +63,7 @@
                     }
                 }
                 str += '<li>\
-                        <a href="'+ 'http://localhost/ajax/douban/detailPage.html?id=' + musicId + '">\
+                        <a href="'+ './detailPage.html?id=' + musicId + '">\
                             <img src="' + imgUrl + '" alt="">\
                             <div class="msg-wrapper">\
                                 <span class="title">'+ title + '</span>\
@@ -94,7 +94,6 @@
 
     function hideList(e) {
         var target = e.target;
-        // console.log(e.target);
         if (!$(target).closest('ul').hasClass('search-list') && !$(target).hasClass('search-inp')) {
             searchList.css('display', 'none');
             $(document).off('mousedown', hideList)

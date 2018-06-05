@@ -1,0 +1,138 @@
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.content-wrapper {
+    width: 100%;
+}
+
+.content-wrapper .content {
+    margin: 0 auto;
+    width: 1040px;
+}
+
+.content-wrapper .content .article {
+    float: left;
+    width: 675px;
+}
+
+/* 音乐人 */
+.content-wrapper .content .article .popular-star {
+    width: 100%;
+}
+
+.content-wrapper .content .article .popular-star .header {
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+    border-bottom: 2px solid #02A682;
+}
+
+.content-wrapper .content .article .popular-star .header .popular {
+    display: inline-block;
+    color: #999;
+    cursor: pointer;
+}
+
+.content-wrapper .content .article .popular-star .header .rise-fast {
+    display: inline-block;
+    color: #999;
+    cursor: pointer;
+}
+
+.content-wrapper .content .article .popular-star .header  .active-tab {
+    font-size: 17px;
+    color: #222;
+}
+
+/* 右边栏 */
+.content-wrapper .content .aside {
+    float: right;
+    width: 300px;
+    height: 1000px;
+    border: 1px solid #ccc;
+}
+
+/* 右边栏广告区 */
+.content-wrapper .content .aside .advertise  {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 250px;
+    cursor: pointer;
+}
+
+.content-wrapper .content .aside .advertise .aside-ad {
+    width: 100%;
+    height: 250px;
+}
+
+.content-wrapper .content .aside .advertise .icon-ad {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    padding: 4px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 我要加入 */
+.content-wrapper .content .aside .join {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 30px;
+}
+
+.content-wrapper .content .aside .join .join-block {
+    float: left;
+    margin-right: 2px;
+    width: 98px;
+    text-align: center;
+}
+
+.content-wrapper .content .aside .join .join-block h2 {
+    margin-top: 9px;
+    width: 100%;
+    line-height: 150%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.content-wrapper .content .aside .join .join-block h2 a {
+    line-height: 15px;
+    font: 15px Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: #138A64; 
+}
+
+.content-wrapper .content .aside .join .join-block h2 a:hover {
+    color: #fff;
+    background-color: #138A64;
+}
+
+.content-wrapper .content .aside .join .join-block p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.62;
+}
+
+.content-wrapper .content .aside .join button {
+    width: 100%;
+    background-color: #139D72;
+    height: 40px;
+    color: #FFF;
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 3px;
+    border: 1px solid #138A64;
+    border-radius: 3px;
+    cursor: pointer;
+}
