@@ -21,7 +21,7 @@
     background: #545652;
     height: 28px;
     font-size: 0px;
-    min-width: 950px;
+    min-width: 1140px;
 }
 
 .global-nav .global-nav-left {
@@ -51,6 +51,7 @@
 /* 搜索区域 */
 .nav-wrapper {
     width: 100%;
+    min-width: 1140px;
     height: 74px;
     border-bottom:  1px solid #ddd;
     background-color: #e3e9e2;
@@ -162,6 +163,7 @@
 /* 第二个导航栏 */
 .nav-second-wrapper {
     width: 100%;
+    min-width: 1140px;
     height: 40px;
     font-size: 0px;
     margin-bottom: 40px;

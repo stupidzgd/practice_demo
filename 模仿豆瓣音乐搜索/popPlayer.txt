@@ -1,0 +1,82 @@
+[
+        {
+            name: '沈帜',
+            url: './images/poppic/1.jpg',
+            description: '轻音乐 Easy Listening'
+        },
+        {
+            name: 'A.J.Alex',
+            url: './images/poppic/2.jpg',
+            description: '原声 Soundtrack'
+        },
+        {
+            name: 'P.K.14',
+            url: './images/poppic/3.jpg',
+            description: '摇滚 Rock'
+        },
+        {
+            name: '王敖（音乐人）',
+            url: './images/poppic/4.jpg',
+            description: '世界音乐 World'
+        },
+        {
+            name: 'Arrebato',
+            url: './images/poppic/5.jpg',
+            description: '世界音乐 World'
+        },
+        {
+            name: '放肆的肆',
+            url: './images/poppic/6.jpg',
+            description: '流行 Pop'
+        },
+        {
+            name: '黎忘年',
+            url: './images/poppic/7.jpg',
+            description: '摇滚 Rock'
+        },
+        {
+            name: '沈空西院与万柳塘公园',
+            url: './images/poppic/8.jpg',
+            description: '民谣 Folk'
+        },
+        {
+            name: 'Soil terrapin',
+            url: './images/poppic/9.jpg',
+            description: '说唱 Rap'
+        },
+        {
+            name: '鞭子情人',
+            url: './images/poppic/10.jpg',
+            description: '民谣 Folk'
+        },
+        {
+            name: 'Ascension Music Group',
+            url: './images/poppic/11.jpg',
+            description: '说唱 Rap'
+        },
+        {
+            name: '包小静',
+            url: './images/poppic/12.jpg',
+            description: '说唱 Rap'
+        },
+        {
+            name: '德宏老爹',
+            url: './images/poppic/13.jpg',
+            description: '说唱 Rap'
+        },
+        {
+            name: '罗艺恒',
+            url: './images/poppic/14.jpg',
+            description: '流行 Pop'
+        },
+        {
+            name: '英伦盒子',
+            url: './images/poppic/15.jpg',
+            description: '民谣 Folk'
+        },
+        {
+            name: '李蔓',
+            url: './images/poppic/16.jpg',
+            description: '流行 Pop'
+        },
+    ]

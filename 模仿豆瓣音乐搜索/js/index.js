@@ -15,14 +15,20 @@
     var oInp = $('.search-inp');
     oInp.on('input', debounce(getDate, 800, false));
     $(document).on('mousedown', hideList);
-    $('.search-wrapper form').on('submit', function(e) {
+    $('.search-wrapper form').on('submit', function (e) {
         e.preventDefault();
     })
-    $('.search-btn').on('submit', function(e) {
+    $('.search-btn').on('submit', function (e) {
         e.preventDefault();
     })
     $('.search-inp').on('keyup', bindEnter);
     var returnedData;
+    var popTab = $('.popular');
+    var newTab = $('.rise-fast');
+
+    popTab.on('click', switchTab);
+    newTab.on('click', switchTab);
+    getPopPlayer();
 
     function getDate() {
         var value = this.value;
@@ -36,7 +42,7 @@
                 returnedData = data;
                 addDom(data);
             }
-        })
+        });
     }
 
     function addDom(data) {
@@ -102,14 +108,90 @@
 
     function bindEnter(e) {
         console.log(1111);
-        if(e.keyCode == '13') {
+        if (e.keyCode == '13') {
             id = returnedData.musics[0].id;
             console.log(id);
-            if(id) {
+            if (id) {
                 window.location.href = './detailPage.html?id=' + id;
-            }     
+            }
         }
-        
+
+    }
+
+    //本周流行音乐人区域
+    var listNum = 8
+
+    function getPopPlayer() {
+        $.ajax({
+            type: 'get',
+            url: './popPlayer.json',
+            success: function (data) {
+                createPopPlayerDom(data);
+            }
+        });
+    }
+    
+
+    function createPopPlayerDom(data) {
+        var popArtists = $('.artists');
+        var newArtists = $('.new-artists');
+        var popStr = '';
+        var newStr = '';
+        data.forEach(function(ele, index) {
+            if(index < 8) {
+                popStr += '\
+                <div class="artist-item">\
+                    <div class="cover">\
+                        <a href="#">\
+                            <img src="' + data[index].url  + '" alt="">\
+                        </a>\
+                        <span class="icon-play"><i></i></span>\
+                        <p class="hide-msg">音乐信息</p>\
+                    </div>\
+                    <div class="msg">\
+                        <span class="player-name">' + data[index].name + '</span>\
+                        <p class="music-type">' + data[index].description + '</p>\
+                    </div>\
+                </div>\ '
+
+            } else {
+                newStr += '\
+                <div class="artist-item">\
+                    <div class="cover">\
+                        <a href="#">\
+                            <img src="' + data[index].url  + '" alt="">\
+                        </a>\
+                        <span class="icon-play"><i></i></span>\
+                        <p class="hide-msg">音乐信息</p>\
+                    </div>\
+                    <div class="msg">\
+                        <span class="player-name">' + data[index].name + '</span>\
+                        <p class="music-type">' + data[index].description + '</p>\
+                    </div>\
+                </div>\ '
+
+            }
+        })
+        popArtists.html(popStr);
+        newArtists.html(newStr);
+    }
+
+    function switchTab () {
+        console.log($(this).prop('className'));
+        console.log($(this).prop('className').indexOf('active'))
+        if ($(this).prop('className').indexOf('active-tab') === -1) {
+            $(this).addClass('active-tab');
+        }
+        if ($(this).prop('className').indexOf('popular') != -1) {
+            newTab.removeClass('active-tab');
+            $('.new-artists').css({'display': 'none'});
+            $('.artists').css({'display': 'block'});
+        } else {
+            popTab.removeClass('active-tab');
+            $('.artists').css({'display': 'none'});
+            $('.new-artists').css({'display': 'block'});
+        }
+
     }
 
 

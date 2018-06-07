@@ -22,6 +22,8 @@
 /* 音乐人 */
 .content-wrapper .content .article .popular-star {
     width: 100%;
+    height: 480px;
+    margin-bottom: 40px;
 }
 
 .content-wrapper .content .article .popular-star .header {
@@ -48,12 +50,110 @@
     color: #222;
 }
 
+/*音乐人相册 */
+.artists,
+.new-artists {
+    width: 645px;
+    height: 433px;
+    padding: 15px 0 0 30px;
+}
+
+.new-artists {
+    display: none;
+}
+
+.artists .artist-item,
+.new-artists .artist-item{
+    float: left;
+    margin-right: 30px;
+    width: 130px;
+    height: 209px;
+    /* 145 */
+}
+
+.artists .artist-item .cover,
+.new-artists .artist-item .cover {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    margin-bottom: 10px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 0 1px #DFDCDC;
+}
+
+.artists .artist-item .cover a,
+.new-artists .artist-item .cover a {
+    width: 100%;
+    height: 100%;
+}
+
+.artists .artist-item .cover img,
+.new-artists .artist-item .cover img {
+    width: 100%;
+    height: 100%;
+}
+
+.artists .artist-item .cover .hide-msg,
+.new-artists .artist-item .cover .hide-msg {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 14px;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: 0.85;
+    cursor: pointer;
+    font-size: 13px;
+    color: #fff;
+    line-height: 1.62;
+}
+
+.artists .artist-item .cover:hover .hide-msg,
+.new-artists .artist-item .cover:hover .hide-msg{
+    display: block;
+}
+
+.artists .artist-item .msg,
+.new-artists .artist-item .msg {
+    margin-top: 5px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.artists .artist-item .msg .player-name,
+.new-artists .artist-item .msg .player-name {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 100%;
+    color: #138A64;
+    cursor: pointer;
+}
+
+.artists .artist-item .msg .player-name:hover, 
+.new-artists .artist-item .msg .player-name:hover{
+    color: #FFF;
+    background-color: #138A64;
+}
+
+.artists .artist-item .msg .music-type,
+.new-artists .artist-item .msg .music-type{
+    width: 100%;
+    margin: 1px 0 18px 0;
+    color: #999;
+    font-size: 13px;
+    line-height: 1.62;
+}
+
+
 /* 右边栏 */
 .content-wrapper .content .aside {
     float: right;
     width: 300px;
     height: 1000px;
-    border: 1px solid #ccc;
 }
 
 /* 右边栏广告区 */
@@ -135,4 +235,94 @@
     border: 1px solid #138A64;
     border-radius: 3px;
     cursor: pointer;
+}
+
+/* 标签栏 */
+.content-wrapper .content .aside .tag-wrapper {
+    width: 300px;
+    height: 220px;
+}
+
+.content-wrapper .content .aside .tag-wrapper .tag-header {
+    width: 100%;
+    height: 24px;
+}
+
+.content-wrapper .content .aside .tag-wrapper .tag-header span {
+    float: left;
+    font-size: 15px;
+    color: #222;
+    line-height: 1.62;
+}
+
+.content-wrapper .content .aside .tag-wrapper .tag-header .more {
+    float: right;
+    width: 30px;
+}
+
+.content-wrapper .content .aside .tag-wrapper .tag-header .more a {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.62;
+}
+
+.content-wrapper .content .aside .tag-wrapper .tag-header .more a:hover {
+    color: #fff;
+    background-color: #999;
+}
+
+.content-wrapper .content .aside .tag-wrapper table,
+.content-wrapper .content .aside .tag-wrapper table tbody,
+.content-wrapper .content .aside .tag-wrapper table tbody tr {
+    width: 100%;
+}
+
+.content-wrapper .content .aside .tag-wrapper table tbody tr td{
+    width: 150px;
+    border-top: 1px solid #F8F6F6;
+    border-bottom: 1px solid #F8F6F6;
+    border-right: 1px solid #F8F6F6;
+    padding: 1px 1px 1px 7px;
+    font-size: 15px;
+    height: 36px;
+    line-height: 36px;
+    color: #138A64;
+    cursor: pointer;
+}
+
+
+/* 音乐播放小图标 */
+.icon-play {
+    position: absolute;
+    z-index: 3;
+    right: 10px;
+    bottom: 10px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #222;
+    border-radius: 50%;
+    background-color: #222;
+}
+
+.artists .artist-item .cover:hover .icon-play, 
+.new-artists .artist-item .cover:hover .icon-play{
+    border: 1px solid #fff;
+    background-color: #fff;
+}
+
+.icon-play i {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 8px solid transparent;
+    border-left: 8px solid #fff;
+}
+
+.artists .artist-item .cover:hover .icon-play i, 
+.new-artists .artist-item .cover:hover .icon-play i{
+    border-left: 8px solid #000;
 }
