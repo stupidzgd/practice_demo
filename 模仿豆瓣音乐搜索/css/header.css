@@ -142,20 +142,29 @@
 
 .nav-wrapper .nav-main .search-wrapper .search-list li a .msg-wrapper{
     display: inline-block;
+    width: 390px;
     vertical-align: top;
 }
 
 .nav-wrapper .nav-main .search-wrapper .search-list li span {
     display: block;
+    width: 100%;
     margin: 5px;
     font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .nav-wrapper .nav-main .search-wrapper .search-list li .title {
+    display: block;
+    width: 100%;
     color: #09c;
 }
 
 .nav-wrapper .nav-main .search-wrapper .search-list li .des {
+    display: block;
+    width: 100%;
     color: #999;
 }
 

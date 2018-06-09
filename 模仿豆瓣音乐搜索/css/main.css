@@ -277,6 +277,10 @@
     width: 100%;
 }
 
+.content-wrapper .content .aside .tag-wrapper .tag-table {
+    border-collapse: collapse;
+}
+
 .content-wrapper .content .aside .tag-wrapper table tbody tr td{
     width: 150px;
     border-top: 1px solid #F8F6F6;
@@ -290,6 +294,9 @@
     cursor: pointer;
 }
 
+.content-wrapper .content .aside .tag-wrapper table tbody tr td:hover {
+    background-color: #F5F7F8;
+}
 
 /* 音乐播放小图标 */
 .icon-play {
