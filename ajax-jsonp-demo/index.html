@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="ajax-get">ajax get</button>
+    <button class="ajax-post">ajax post</button>
+    <button class="jsonp">click send jsonp request</button>
+
+    <script src="ajax.js"></script>
+    <script src="jsonp.js"></script>
+    <script>
+        var btnGet = document.getElementsByClassName('ajax-get')[0];
+        var btnPost = document.getElementsByClassName('ajax-post')[0];
+        var btnJsonp = document.getElementsByClassName('jsonp')[0];
+
+        btnGet.onclick = function () {
+            var url = './getNews.php';
+            myAjax.jsonpAjax({
+                url: url,
+                data: '',
+                type: 'get',
+                success: function (data) {
+                    getNews(data);
+                }
+            })
+        }
+
+        btnPost.onclick = function () {
+            var url = './post.php';
+            var data = 'username=zgd&age=88';
+            myAjax.jsonpAjax({
+                url: url,
+                data: data,
+                type: 'post',
+                success: function (data) {
+                    postMsg(data);
+                }
+            })
+        }
+
+        btnJsonp.onclick = function () {
+            myAjax.jsonpAjax({
+                //url是百度搜索接口
+                // url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+                //douban音乐搜索接口
+                url: 'https://api.douban.com/v2/music/search',
+                data: 'q=红豆&count=5',
+                dataType: 'jsonp',
+                type: 'GET',
+                //百度接口回调函数参数名是cb需要指定，douban是callback默认无需指定
+                // jsonp: 'cb',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+
+        function getNews(data) {
+            data = JSON.parse(data);
+            console.log(data);
+        }
+
+        function postMsg(data) {
+            console.log(data);
+        }
+
+    </script>
+</body>
+
+</html>
