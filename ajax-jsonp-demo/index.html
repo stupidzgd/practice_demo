@@ -14,7 +14,6 @@
     <button class="jsonp">click send jsonp request</button>
 
     <script src="ajax.js"></script>
-    <script src="jsonp.js"></script>
     <script>
         var btnGet = document.getElementsByClassName('ajax-get')[0];
         var btnPost = document.getElementsByClassName('ajax-post')[0];
@@ -22,10 +21,10 @@
 
         btnGet.onclick = function () {
             var url = './getNews.php';
-            myAjax.jsonpAjax({
+            myAjax.jsonp({
                 url: url,
                 data: '',
-                type: 'get',
+                method: 'get',
                 success: function (data) {
                     getNews(data);
                 }
@@ -35,10 +34,10 @@
         btnPost.onclick = function () {
             var url = './post.php';
             var data = 'username=zgd&age=88';
-            myAjax.jsonpAjax({
+            myAjax.jsonp({
                 url: url,
                 data: data,
-                type: 'post',
+                method: 'post',
                 success: function (data) {
                     postMsg(data);
                 }
@@ -46,14 +45,14 @@
         }
 
         btnJsonp.onclick = function () {
-            myAjax.jsonpAjax({
+            myAjax.jsonp({
                 //url是百度搜索接口
                 // url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
                 //douban音乐搜索接口
                 url: 'https://api.douban.com/v2/music/search',
                 data: 'q=红豆&count=5',
                 dataType: 'jsonp',
-                type: 'GET',
+                method: 'GET',
                 //百度接口回调函数参数名是cb需要指定，douban是callback默认无需指定
                 // jsonp: 'cb',
                 success: function (data) {
@@ -68,6 +67,7 @@
         }
 
         function postMsg(data) {
+          console.log(1111);
             console.log(data);
         }
 
