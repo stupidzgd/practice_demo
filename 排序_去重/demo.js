@@ -76,3 +76,22 @@ function swap(arr, m, n) {
   arr[m] = arr[n];
   arr[n] = temp;
 }
+
+
+function quick(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+  var left = [];
+  var right = [];
+  var base = arr[0];
+  for (var i = 1; i < arr.length; i++) {
+    // 判决条件
+    if (arr[i] > base) {
+      right.push(arr[i]);
+    } else {
+      left.push(arr[i])
+    }
+  }
+  return quick(left).concat(base, quick(right));
+}
