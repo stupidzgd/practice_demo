@@ -33,7 +33,7 @@ function selectionSort(arr) {
   var min;
   for (var i = 0; i < len - 1; i++) {
     min = i;
-    for (var j = i; j < len; j++) {
+    for (var j = i + 1; j < len; j++) {
       if (arr[j] < arr[min]) {
         min = j;
       }
