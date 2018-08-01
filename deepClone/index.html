@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>deepclone</title>
+</head>
+
+<body>
+  <script>
+    obj1 = {
+      color: 'red',
+      age: 18,
+      teacher: {
+        name: 'zz',
+        age: 22,
+        favorite: ['football', 'basketBall']
+      }
+    }
+
+    obj2 = {
+      name: 'hahah',
+      list: [5, 4, 3, 2, 1]
+    }
+
+    function deepClone(target, obj) {
+      if (arguments.length < 2) {
+        return;
+      }
+      var src,
+        copy,
+        option,
+        i = 1;
+      target = target || {};
+
+      for (; i < arguments.length; i++) {
+        option = arguments[i];
+        if (option) {
+          for (var prop in option) {
+            src = target[prop];
+            copy = option[prop];
+            console.log(copy);
+            if (typeof copy == 'object') {
+              if (Object.prototype.toString.call(copy === '[object Array]')) {
+                src = src ? src : [];
+              } else {
+                src = src ? src : {};
+              }
+              target[prop] = deepClone(src, copy);
+            } else {
+              target[prop] = copy;
+            }
+          }
+        }
+      }
+      return target;
+
+    }
+
+    var a = deepClone({}, obj1, obj2);
+
+  </script>
+</body>
+
+</html>
