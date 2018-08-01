@@ -1,4 +1,4 @@
-
+//去重
 function distinct(arr) {
   var obj = {};
   var ret = [];
@@ -10,6 +10,16 @@ function distinct(arr) {
     }
   }
   return ret;
+}
+
+//shuffle
+function shuffle(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    var randomInt = Math.floor(Math.random() * (i + 1));
+    var temp = arr[randomInt];
+    arr[randomInt] = arr[i];
+    arr[i] = temp;
+  }
 }
 
 // 冒泡排序，升序
