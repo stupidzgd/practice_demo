@@ -58,7 +58,7 @@ function selectionSort(arr) {
 // 快速排序
 function quickSort(arr, left, right) {
   left = typeof left !== 'number' ? 0 : left;
-  right = typeof right !== 'number' ? 0 : right;
+  right = typeof right !== 'number' ? arr.length-1 : right;
   var partitionIndex;
   if (left < right) {
     partitionIndex = partition(arr, left, right);
