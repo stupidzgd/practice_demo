@@ -13,7 +13,7 @@
 
     var searchList = $('.search-list');
     var oInp = $('.search-inp');
-    oInp.on('input', debounce(getDate, 800, false));
+    oInp.on('input', debounce(getData, 800, false));
     $(document).on('mousedown', hideList);
     $('.search-wrapper form').on('submit', function (e) {
         e.preventDefault();
@@ -30,7 +30,7 @@
     newTab.on('click', switchTab);
     getPopPlayer();
 
-    function getDate() {
+    function getData() {
         var value = this.value;
         console.log(value);
         $.ajax({
@@ -102,7 +102,7 @@
         var target = e.target;
         if (!$(target).closest('ul').hasClass('search-list') && !$(target).hasClass('search-inp')) {
             searchList.css('display', 'none');
-            $(document).off('mousedown', hideList)
+            // $(document).off('mousedown', hideList)
         }
     }
 
